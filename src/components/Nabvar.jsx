@@ -1,5 +1,6 @@
 import { GoSidebarExpand } from "react-icons/go";
 import logo from "../assets/logo.jpeg";
+import { FaRegUser } from "react-icons/fa";
 
 const Nabvar = () => {
   return (
@@ -33,12 +34,7 @@ const Nabvar = () => {
             role="button"
             className="btn btn-ghost btn-circle avatar"
           >
-            <div className="w-10 rounded-full">
-              <img
-                alt="User avatar"
-                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-              />
-            </div>
+            <FaRegUser size={20} />
           </div>
 
           <ul
