@@ -1,6 +1,7 @@
 import { FaRegListAlt } from "react-icons/fa";
 import { GoChecklist } from "react-icons/go";
 import { MdAddCircleOutline } from "react-icons/md";
+import { Link } from "react-router";
 
 const Sidebar = () => {
   return (
@@ -15,34 +16,40 @@ const Sidebar = () => {
         <ul className="menu w-full grow gap-15">
           {/* List item */}
           <li>
-            <button
-              className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
-              data-tip="Add Items"
-            >
-              <MdAddCircleOutline size={20} />
-              <span className="is-drawer-close:hidden">Add Items</span>
-            </button>
+            <Link to={"/add"}>
+              <button
+                className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
+                data-tip="Add Items"
+              >
+                <MdAddCircleOutline size={20} />
+                <span className="is-drawer-close:hidden">Add Items</span>
+              </button>
+            </Link>
           </li>
 
           {/* List item */}
           <li>
-            <button
-              className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
-              data-tip="List Items"
-            >
-              <FaRegListAlt size={20} />
-              <span className="is-drawer-close:hidden">List Items</span>
-            </button>
+            <Link to={"/list"}>
+              <button
+                className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
+                data-tip="List Items"
+              >
+                <FaRegListAlt size={20} />
+                <span className="is-drawer-close:hidden">List Items</span>
+              </button>
+            </Link>
           </li>
 
           <li>
-            <button
-              className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
-              data-tip="Orders"
-            >
-              <GoChecklist size={20} />
-              <span className="is-drawer-close:hidden">Orders</span>
-            </button>
+            <Link to={"/orders"}>
+              <button
+                className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
+                data-tip="Orders"
+              >
+                <GoChecklist size={20} />
+                <span className="is-drawer-close:hidden">Orders</span>
+              </button>
+            </Link>
           </li>
         </ul>
       </div>
