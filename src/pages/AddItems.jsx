@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const AddItems = () => {
   const [image, setImage] = useState(false);
@@ -18,8 +19,6 @@ const AddItems = () => {
       [name]: name === "price" ? Number(value) : value,
     }));
   };
-
-  console.log(formData);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -43,9 +42,14 @@ const AddItems = () => {
           category: "",
         });
         setImage(false);
+        toast.success(response.data.message)
       } else {
+        toast.error(response.data.message);
       }
-    } catch (error) {}
+    } catch (error) {
+      toast.error("Internal Server Error!");
+      console.log("Error in handleSubmit(AddItems):", error);
+    }
   };
 
   return (
