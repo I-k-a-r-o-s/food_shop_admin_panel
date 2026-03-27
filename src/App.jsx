@@ -18,6 +18,7 @@ const App = () => {
           {/* Page content here */}
           <div className="p-4">
             <Routes>
+              <Route path="*" element={<AddItems />} />
               <Route path="/add" element={<AddItems />} />
               <Route path="/list" element={<ListItems />} />
               <Route path="/orders" element={<Orders />} />
